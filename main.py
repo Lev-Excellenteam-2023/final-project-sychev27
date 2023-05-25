@@ -1,20 +1,22 @@
+import asyncio
+
 from handling_presentations import extract_text_from_presentation
+from handling_api import api_request
+
+CONTENT = "Text below from presentation slide give me short explanation about this topic \n"
 
 
+async def main():
+    file = open("my_lesson.txt", 'w')
 
-def main():
-    # Example usage
     presentation_path = 'Tests.pptx'
     extracted_text = extract_text_from_presentation(presentation_path)
 
-    # Print the extracted text from each slide
-    for i, slide_text in enumerate(extracted_text):
-        print(f"Slide {i + 1}:")
-        print(slide_text)
-        print()
+    res = '\n'.join(await asyncio.gather(*(api_request(CONTENT, text) for text in extracted_text)))
+    file.write(res)
 
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())
 
 

@@ -23,5 +23,4 @@ def extract_text_from_presentation(presentation_path):
         slide_text_combined = '\n'.join(slide_text)
         all_text.append(slide_text_combined)  # Append the text to all_text list
 
-
     return all_text
