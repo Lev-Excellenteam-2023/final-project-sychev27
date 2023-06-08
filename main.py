@@ -8,7 +8,6 @@ CONTENT = "Text below from presentation slide give me short explanation about th
 
 async def main():
     file = open("my_lesson.txt", 'w')
-
     presentation_path = 'Tests.pptx'
     extracted_text = extract_text_from_presentation(presentation_path)
 

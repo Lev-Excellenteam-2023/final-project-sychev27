@@ -1,4 +1,0 @@
-Tests are code written to verify that your code works as expected. 
-Mocks are objects that simulate the behavior of real objects.
-Refactoring code means cleaning up and improving the quality of your existing code.
-Tests refer to the assessment tools used to measure a student's knowledge and understanding of a subject or course material. Tests can take various forms, including multiple-choice, essay, practical exams, and oral exams. These assessments are used by educators to evaluate a student's progress, identify areas of weakness, and measure the effectiveness of their teaching strategies. Tests can also serve as a motivational tool for students, encouraging them to study and prepare for the exam to achieve higher grades.
