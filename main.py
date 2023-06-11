@@ -11,7 +11,7 @@ async def main():
     presentation_path = 'Tests.pptx'
     extracted_text = extract_text_from_presentation(presentation_path)
 
-    res = '\n'.join(await asyncio.gather(*(api_request(CONTENT, text) for text in extracted_text)))
+    res = '\n'.join(await asyncio.gather(*(api_request(CONTENT, extracted_text[i]) for i in range(2))))
     file.write(res)
 
 
