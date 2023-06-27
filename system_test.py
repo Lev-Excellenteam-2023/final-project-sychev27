@@ -1,8 +1,6 @@
 import os
 import subprocess
 import time
-from handling_presentations import extract_text_from_presentation
-from handling_api import api_request
 from web_api import app
 from client import WebApiClient
 
@@ -10,13 +8,13 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['OUTPUT_FOLDER'] = 'outputs'
 
 # Start the Web API
-api_process = subprocess.Popen(['python', 'web_api.py'])
+api_process = subprocess.Popen(['python3', 'web_api.py'])
 
 # Wait for the Web API to start
 time.sleep(2)
 
 # Start the Explainer
-explainer_process = subprocess.Popen(['python', 'explainer.py'])
+explainer_process = subprocess.Popen(['python3', 'explainer.py'])
 
 # Wait for the Explainer to start
 time.sleep(2)
@@ -25,7 +23,7 @@ time.sleep(2)
 client = WebApiClient('http://localhost:5000')
 
 # Define the path to the sample presentation
-sample_presentation_path = '../Tests.pptx'
+sample_presentation_path = 'Tests.pptx'
 
 # Upload the sample presentation
 uid = client.upload(sample_presentation_path)
