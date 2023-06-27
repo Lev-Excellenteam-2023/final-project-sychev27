@@ -12,6 +12,15 @@ OUTPUTS_FOLDER = 'outputs'
 
 
 async def handle_file(file_path):
+    """
+    Handle a presentation file.
+
+    Args:
+        file_path (str): The path to the presentation file.
+
+    Returns:
+        None
+    """
     file_name = os.path.basename(file_path)
     extracted_text = extract_text_from_presentation(file_path)
     results = await asyncio.gather(*(api_request(CONTENT, extracted_text[i]) for i in range(2)))
@@ -33,6 +42,12 @@ async def handle_file(file_path):
 
 
 async def monitor_uploads_folder():
+    """
+    Monitor the uploads folder for new presentation files and handle them.
+
+    Returns:
+        None
+    """
     while True:
         # Check for files in the uploads folder
         files = os.listdir(UPLOADS_FOLDER)
